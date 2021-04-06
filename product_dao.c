@@ -73,7 +73,7 @@ Product* ProductDAO_readAll(ProductDAO _this, int *count) {
     int products = size / getDataSize();
 
     fseek(fp, 0, SEEK_SET);
-    Product *array = (Product *) malloc(sizeof(Product));
+    Product *array = (Product *) malloc(sizeof(Product) * products);
 
     for (int i = 0; i < products; i++) {
         array[i] = Product_create(0, "", 0);
